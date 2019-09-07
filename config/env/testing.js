@@ -29,6 +29,9 @@ module.exports = {
                 columnType: ' timestamp(0) NOT NULL DEFAULT LOCALTIMESTAMP(0)',
             },
         },
+        dataEncryptionKeys: {
+            default: 'v6llxrAyAA7Jv2Hfv/2J9ETvIwiX8UjuseTGtswSgWU='
+        },
 	},
 	log: {
 		level: 'info'
@@ -44,5 +47,9 @@ module.exports = {
             return proceed(undefined, true);
 
         },
-    }
+    },
+    local: {
+        port: 1337,
+        environment: process.env.NODE_ENV || 'testing',
+    },
 }

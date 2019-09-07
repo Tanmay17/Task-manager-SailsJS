@@ -4,7 +4,7 @@ var expect = require('chai').expect;
 var sinon = require('sinon');
 const mockData = require('../mockData').AgentController;
 
-describe("Testing AgentController", () => {
+describe.skip("Testing AgentController", () => {
     it("No params send 500 status code", async () => {
         await supertest
             .get("/task/getAllTask")

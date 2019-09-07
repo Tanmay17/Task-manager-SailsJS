@@ -1,52 +1,39 @@
 module.exports = {
-    AgentController: {
-        "Valid": {
-            "company_name": "Marvel Inc.",
-            "address":"Somewhere in Titan, Saturn Moon",
-            "longitude": 32.2345678,
-            "latitude": 34.45678,
-            "contact_number": "8765040790",
-            "email": "thanos@marvel.com",
-            "country": "Saturn",
-            "state": "Titan",
-            "owner_name": "Thanos",
-            "support_contact": "8765040790",
-            "status": true,
-            "timezone_id": 99,
-        },
-        "Invalid": {
-            "company_name": "Marvel Inc.",
-            "address":"Somewhere in Titan, Saturn Moon",
-            "longitude": "32.2345678",
-            "latitude": "34.45678",
-            "contact_number": "8765040790",
-            "email": "thanos@marvel.com",
-            "country": "Saturn",
-            "state": "Titan",
-            "owner_name": "Thanos",
-            "support_contact": 8765040790,
-            "status": true,
-            "timezone_id": 99,
-        },
-        
-    },
+    AgentController: {},
     ManagerController: {
+        getAllTask:{
+            "Valid": {
+                createdBy: "t@test.com"
+            },
+            "Invalid": {
+                createdBy: 131,
+            }
+        },
         createTask: {
             "Valid": {
                 description : "TEST description",
-                task_location: "TEST location",
-                created_by: "t@test.com",
-                assigned_to: "v@test.com",
+                taskLocation: "TEST location",
+                createdBy: "t@test.com",
+                assignedTo: "",
                 deadline: 1561684,
-                task_attachment_link: ""
+                taskAttachmentLink: ""
             },
             "Invalid": {
                 description : "TEST description",
-                task_location: "TEST location",
-                created_by: "t@test.com",
-                assigned_to: "v@test.com",
+                taskLocation: "TEST location",
+                createdBy: "t@test.com",
+                assignedTo: "v@test.com",
                 deadline: "1561684",
-                task_attachment_link: ""
+                taskAttachmentLink: ""
+            }
+        },
+        assignTask: {
+            "Valid": {
+                assignedTo: "v@test.com",
+            },
+            "Invalid": {
+                id : 12,
+                assignedTo: "v@test.com",
             }
         }
     }
