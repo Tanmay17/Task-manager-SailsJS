@@ -61,11 +61,13 @@ module.exports = {
 
 
       adapter: 'sails-postgresql',
-      url: process.env.POSTGRESQL_URL,
+     ssl      : true,
+	 url: process.env.POSTGRESQL_URL,
       port: process.env.POSTGRESQL_PORT,
       charset: process.env.CHARSET,
       timezone: process.env.TIMEZONE,
       pool: true,
+      max: 1,
       connectionLimit: process.env.POSTGRESQL_CONNECTION_LIMIT,
 
       /****************************************************************************

@@ -30,7 +30,8 @@ module.exports = {
             }, {
                 task_status: request.task_status
             });
-        } catch (error) {
+        	res.ok("Status Changed");
+	} catch (error) {
             sails.log.error(error)
             res.serverError({"err": "Oops! Something went wrong in assignTask api!"});
         }
